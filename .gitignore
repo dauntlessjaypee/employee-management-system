@@ -1,0 +1,19 @@
+# Maven
+backend/employee-management-backend/target/
+backend/employee-management-backend/.mvn/
+
+# Java
+*.class
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+*.env
