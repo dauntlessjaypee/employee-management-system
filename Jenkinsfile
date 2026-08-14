@@ -26,5 +26,13 @@ pipeline {
                 }
             }
         }
+
+        stage('Build Docker Image') {
+            steps {
+                dir('backend/employee-management-backend') {
+                    sh 'docker build -t employee-management-backend:1.0 .'
+                }
+            }
+        }
     }
 }
