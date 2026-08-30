@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: employee-backend
+  namespace: employee-management
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: employee-backend
+
+  template:
+    metadata:
+      labels:
+        app: employee-backend
+
+    spec:
+      containers:
+        - name: employee-backend
+          image: dauntlessjaypee/employee-management-backend:1.2
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: backend-config
+                  key: DB_URL
+
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: DB_USERNAME
+
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: DB_PASSWORD

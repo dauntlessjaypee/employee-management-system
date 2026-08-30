@@ -1,3 +1,6 @@
+# Kubernetes secret
+k8s/postgres-secret.yaml
+k8s/backend-secret.yaml
 # Maven
 backend/employee-management-backend/target/
 backend/employee-management-backend/.mvn/
