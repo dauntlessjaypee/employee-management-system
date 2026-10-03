@@ -6,7 +6,7 @@ metadata:
   namespace: employee-management
 
 spec:
-  replicas: 2
+  replicas: 1
 
   selector:
     matchLabels:
@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: employee-backend
-          image: dauntlessjaypee/employee-management-backend:1.2
+          image: dauntlessjaypee/employee-management-backend:1.4
           imagePullPolicy: IfNotPresent
 
           ports:
